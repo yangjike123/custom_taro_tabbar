@@ -11,7 +11,7 @@ export default function Index() {
 
   return (
     <View className='index'>
-      个人信息
+      <Text>我的</Text>
       <TabBar currentPage='/pages/my/index' />
     </View>
   )

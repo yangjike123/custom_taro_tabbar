@@ -9,19 +9,19 @@ export default defineAppConfig({
     list: [
       {
         pagePath: 'pages/index/index',
-        text: "首页",
+        text: '',
       },
       {
         pagePath: 'pages/journey/index',
-        text: '行程'
+        text: ''
       },
       {
         pagePath: 'pages/discover/index',
-        text: '发现'
+        text: ''
       },
       {
         pagePath: 'pages/my/index',
-        text: '我的'
+        text: ''
       }
     ]
   },

@@ -3,11 +3,11 @@ import { hideTabBar, switchTab } from "@tarojs/taro"
 import { useEffect } from "react";
 import './index.scss';
 interface Props {
-    currentPage: string;
-    color?: string | '#B7B7B7';
-    checkedColor?: string | '#3C8DFF';
-    backgroundColor?: string | '#FFFFF';
-    zIndex?: number | 1000;
+    currentPage: string; // 当前页面
+    color?: string | '#B7B7B7'; // 文字未选择颜色
+    checkedColor?: string | '#3C8DFF'; // 文字选择颜色
+    backgroundColor?: string | '#FFFFF'; // tabBar背景颜色
+    zIndex?: number | 1000; // 元素层级
 }
 interface TabBarItem {
     pagePath: string
@@ -15,10 +15,10 @@ interface TabBarItem {
     iconPath: string
     selectedIconPath: string
 }
-export default ({ currentPage = '/pages/index/index', color = '#B7B7B7', checkedColor = '#3C8DFF', backgroundColor = '#FFFFF', zIndex = 1000 }: Props) => {
+export default ({ currentPage, color = '#B7B7B7', checkedColor = '#3C8DFF', backgroundColor = '#FFFFF', zIndex = 1000 }: Props) => {
     const wordColor = color;
     const selectColor = checkedColor;
-    const height = 150 / 2; // tabbar栏高度
+    const height = 150 / 2; // tabBar栏高度
     const tabbarList: TabBarItem[] = [
         {
             pagePath: '/pages/index/index',
@@ -45,9 +45,9 @@ export default ({ currentPage = '/pages/index/index', color = '#B7B7B7', checked
             selectedIconPath: require('../../../static/tabbar_img/select_my_icon.png'),
         }
     ];
-   
+
     useEffect(() => {
-        hideTabBar(); // 隐藏tabbar栏
+        hideTabBar(); // 隐藏tabBar栏
     }, []);
 
     function onNav(url: string) {
